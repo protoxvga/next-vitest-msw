@@ -1,8 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button/button";
 import { useState } from "react";
 
-export default function Counter() {
+const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -10,20 +11,26 @@ export default function Counter() {
       <h4 style={{ marginBottom: 16 }} data-testid="counter-value">
         {count}
       </h4>
-      <button
+      <Button
         data-testid="increment-counter"
         onClick={() => setCount((prev) => prev + 1)}
+        variant={"outline"}
       >
-        increment
-      </button>
-      <button
+        +
+      </Button>
+      <Button
         data-testid="decrement-counter"
         onClick={() => setCount((prev) => prev - 1)}
         style={{ marginInline: 16 }}
+        variant={"outline"}
       >
-        decrement
-      </button>
-      <button onClick={() => setCount(0)}>reset</button>
+        -
+      </Button>
+      <Button variant={"destructive"} onClick={() => setCount(0)}>
+        reset
+      </Button>
     </div>
   );
-}
+};
+
+export default Counter;
