@@ -26,6 +26,11 @@ const components: { title: string; href: string; description: string }[] = [
     href: "/users-table",
     description: "Table of placeholders users fetched from API with suspense",
   },
+  {
+    title: "Posts list",
+    href: "/posts-list",
+    description: "Fetch and create posts to test mutations",
+  },
 ];
 
 export function NavigationHeader() {
